@@ -6,30 +6,30 @@
  */
 class Solution {
     func generateParenthesis(_ n: Int) -> [String] {
-        var comb = [Character]()
         var ans = [String]()
         
-        func backtracking(_ openCount: Int, _ closeCount: Int) {
-            if openCount == n {
-                ans.append(String(comb+Array(repeating: ")", count: n-closeCount)))
+        func backtrack(path: [String], opens: Int, closes: Int) {
+            var path = path
+            if closes > opens {
                 return
             }
-            
-            if openCount < n {
-                comb.append("(")
-                backtracking(openCount+1, closeCount)
-                comb.removeLast()
-                
-                if openCount > closeCount {
-                    comb.append(")")
-                    backtracking(openCount, closeCount+1)
-                    comb.removeLast()
+            if opens == n {
+                var temp = path
+                if (opens - closes > 0) {
+                    temp.append(contentsOf: Array(repeating: ")", count: opens - closes))
                 }
+                ans.append(temp.joined())
+                return
+            }
+            for p in ["(", ")"] {
+                path.append(p)
+                backtrack(path: path, opens: p == "(" ? opens + 1 : opens, closes: p == ")" ? closes + 1 : closes)
+                path.popLast()
             }
         }
-        
-        backtracking(0, 0)
-        
+
+        backtrack(path: ["("], opens: 1, closes: 0)
+
         return ans
     }
 }
