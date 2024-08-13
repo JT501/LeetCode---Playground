@@ -6,33 +6,33 @@
  */
 class Solution {
     func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
-        let candidates = candidates.sorted()
-        let len = candidates.count
-        var comb = [Int]()
+        var len = candidates.count
+        var candidates = candidates.sorted()
         var ans = [[Int]]()
-        
-        func backtracking(_ start: Int, _ sum: Int) {
+
+        func backtrack(start: Int, path: [Int], sum: Int) {
+            var path = path
+
             if sum == target {
-                ans.append(comb)
+                ans.append(path)
                 return
             }
-            if sum > target {
-                return
-            }
-            if start < len {
-                for i in start..<len {
-                    if i != start && candidates[i] == candidates[i-1] {
-                        continue
-                    }
-                    comb.append(candidates[i])
-                    backtracking(i+1, sum + candidates[i])
-                    comb.removeLast()
+
+            for i in start..<len {
+                if (sum + candidates[i]) > target {
+                    break
                 }
+                if i != start && candidates[i] == candidates[i - 1] {
+                    continue
+                }
+                path.append(candidates[i])
+                backtrack(start: i + 1, path: path, sum: sum + candidates[i])
+                path.popLast()
             }
         }
-        
-        backtracking(0, 0)
-        
+
+        backtrack(start: 0, path: [], sum: 0)
+
         return ans
     }
 }
