@@ -1,34 +1,33 @@
 /*:
  ## Backtracking
  ### Time: O(N*N!)
- ### Space: O(N!)
+ ### Space: O(N)
  ![submission](1.png)
  */
 class Solution {
     func permute(_ nums: [Int]) -> [[Int]] {
-        var result = [[Int]]()
-        var nums = nums
-        var comb = [Int]()
-        
-        func backtracking(length: Int) {
-            if comb.count == length {
-                result.append(comb)
+        var len = nums.count
+        var ans = [[Int]]()
+
+        func backtrack(path: [Int], used: Set<Int>) {
+            var used = used
+            if path.count == len {
+                ans.append(path)
                 return
             }
-            
             for num in nums {
-                comb.append(num)
-                nums.removeFirst()
-                backtracking(length: length)
-                
-                comb.removeLast()
-                nums.append(num)
+                if used.contains(num) {
+                    continue
+                }
+                used.insert(num)
+                backtrack(path: path + [num], used: used)
+                used.remove(num)
             }
         }
-        
-        backtracking(length: nums.count)
-        
-        return result
+
+        backtrack(path: [], used: [])
+
+        return ans
     }
 }
 
