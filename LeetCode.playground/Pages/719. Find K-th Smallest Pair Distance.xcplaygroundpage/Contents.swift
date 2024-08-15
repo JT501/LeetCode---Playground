@@ -7,7 +7,7 @@
 
 class Solution {
     func smallestDistancePair(_ nums: [Int], _ k: Int) -> Int {
-        var nums = nums.sorted(by: <)
+        var nums = nums.sorted()
         var len = nums.count
         var left = 0 //shortest distance
         var right = nums.last! - nums.first! //largest distance
