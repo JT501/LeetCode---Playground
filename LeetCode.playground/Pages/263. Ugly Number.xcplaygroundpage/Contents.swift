@@ -20,6 +20,7 @@ class Solution {
 let s = Solution().isUgly
 
 /*:
+ ## Recursive
  ### Time: O(log(N))
  ### Space: O(log(N))
  ![submission](2.png)

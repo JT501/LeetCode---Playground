@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='macos' display-mode='rendered' buildActiveScheme='true' importAppTypes='true'>
+<playground version='6.0' target-platform='macos' display-mode='raw' buildActiveScheme='true' importAppTypes='true'>
     <pages>
         <page name='1. Two Sum'/>
         <page name='2. Add Two Numbers'/>
@@ -100,6 +100,7 @@
         <page name='252. Meeting Rooms '/>
         <page name='253. Meeting Rooms II'/>
         <page name='263. Ugly Number'/>
+        <page name='264. Ugly Number II'/>
         <page name='278. First Bad Version'/>
         <page name='279. Perfect Squares'/>
         <page name='283. Move Zeroes'/>
