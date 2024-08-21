@@ -1,5 +1,5 @@
 /*:
- ## Dynamic Programming
+ ## Dynamic Programming + Prefix-sum
  ### Time: O(N³)
  ### Space: O(N²)
  ![submission](1.png)
