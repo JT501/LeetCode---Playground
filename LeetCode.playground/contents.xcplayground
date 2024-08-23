@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='macos' display-mode='raw' buildActiveScheme='true' importAppTypes='true'>
+<playground version='6.0' target-platform='macos' display-mode='rendered' buildActiveScheme='true' importAppTypes='true'>
     <pages>
         <page name='1. Two Sum'/>
         <page name='2. Add Two Numbers'/>
@@ -131,6 +131,7 @@
         <page name='567. Permutation in String'/>
         <page name='572. Subtree of Another Tree'/>
         <page name='587. Erect the Fence'/>
+        <page name='592. Fraction Addition and Subtraction'/>
         <page name='617. Merge Two Binary Trees'/>
         <page name='622. Design Circular Queue '/>
         <page name='624. Maximum Distance in Arrays'/>
