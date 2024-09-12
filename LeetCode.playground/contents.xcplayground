@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='macos' display-mode='rendered' buildActiveScheme='true' importAppTypes='true'>
+<playground version='6.0' target-platform='macos' display-mode='raw' buildActiveScheme='true' importAppTypes='true'>
     <pages>
         <page name='1. Two Sum'/>
         <page name='2. Add Two Numbers'/>
@@ -193,6 +193,7 @@
         <page name='1519. Number of Nodes in the Sub-Tree With the Same Label '/>
         <page name='1544. Make The String Great'/>
         <page name='1657. Determine if Two Strings Are Close'/>
+        <page name='1684. Count the Number of Consistent Strings'/>
         <page name='1704. Determine if String Halves Are Alike'/>
         <page name='1706. Where Will the Ball Fall'/>
         <page name='1834. Single-Threaded CPU '/>
