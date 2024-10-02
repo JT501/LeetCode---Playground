@@ -1,5 +1,5 @@
 /*:
- ### Time: O(1)
+ ### Time: O(n㏒n)
  ### Space: O(n)
  ![submission](1.png)
  */
