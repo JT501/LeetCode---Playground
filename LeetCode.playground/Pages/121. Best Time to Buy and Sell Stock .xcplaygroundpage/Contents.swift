@@ -24,11 +24,39 @@ s([7,1,5,3,6,4])
 s([7,6,4,3,1])
 
 /*:
+ ## One Pass
+ ### Time: O(N)
+ ### Space: O(1)
+ ![submission](2.png)
+ */
+class Solution2 {
+    func maxProfit(_ prices: [Int]) -> Int {
+        var profit = 0
+        var min = Int.max
+
+        for price in prices {
+            if price < min {
+                min = price
+            } else {
+                profit = max(profit, price - min)
+            }
+        }
+
+        return profit
+    }
+}
+
+let s2 = Solution2().maxProfit
+
+s2([7,1,5,3,6,4])
+s2([7,6,4,3,1])
+
+/*:
  ## Brute Force (TLE)
  ### Time: O(N²)
  ### Space: O(1)
  */
-class Solution2 {
+class Solution3 {
     func maxProfit(_ prices: [Int]) -> Int {
         guard prices.count > 1 else { return 0 }
         
@@ -45,7 +73,7 @@ class Solution2 {
     }
 }
 
-let s2 = Solution2().maxProfit
+let s3 = Solution3().maxProfit
 
-s2([7,1,5,3,6,4])
-s2([7,6,4,3,1])
+s3([7,1,5,3,6,4])
+s3([7,6,4,3,1])
