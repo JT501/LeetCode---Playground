@@ -65,3 +65,35 @@ let s2 = Solution2().singleNonDuplicate
 
 s2([1,1,2,3,3,4,4,8,8])
 s2([3,3,7,7,10,11,11])
+
+
+/*:
+ ## Binary Search
+ ### Time: O(㏒ n)
+ ### Space: O(1)
+ ![submission](3.png)
+ */
+
+class Solution3 {
+    func singleNonDuplicate(_ nums: [Int]) -> Int {
+        var left = 0, right = nums.count - 1
+        
+        while left < right {
+            let mid = left + (right-left) / 2
+            if nums[left] < nums[left + 1] {
+                return nums[left]
+            }
+            if nums[right] > nums[right - 1] {
+                return nums[right]
+            }
+            if nums[left] < nums[mid] {
+                left += 2
+            }
+            if nums[right] > nums[mid] {
+                right -= 2
+            }
+        }
+        
+        return nums[left]
+    }
+}
