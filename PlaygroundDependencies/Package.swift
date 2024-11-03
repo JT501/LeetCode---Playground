@@ -9,7 +9,8 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "PlaygroundDependencies",
-            targets: ["PlaygroundDependencies"]),
+            targets: ["PlaygroundDependencies"]
+        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -18,23 +19,23 @@ let package = Package(
             name: "PlaygroundDependencies"),
         .testTarget(
             name: "PlaygroundDependenciesTests",
-            dependencies: ["PlaygroundDependencies"]),
+            dependencies: ["PlaygroundDependencies"]
+        ),
     ]
 )
 
 package.dependencies = [
-    .package(url: "https://github.com/apple/swift-collections", from: "1.1.2")
+    .package(url: "https://github.com/apple/swift-collections", from: "1.1.2"),
 ]
 package.targets = [
     .target(name: "PlaygroundDependencies",
-        dependencies: [
-            .product(name: "BitCollections", package: "swift-collections"),
-.product(name: "DequeModule", package: "swift-collections"),
-.product(name: "HashTreeCollections", package: "swift-collections"),
-.product(name: "HeapModule", package: "swift-collections"),
-.product(name: "OrderedCollections", package: "swift-collections"),
-.product(name: "_RopeModule", package: "swift-collections"),
-.product(name: "Collections", package: "swift-collections")
-        ]
-    )
+            dependencies: [
+                .product(name: "BitCollections", package: "swift-collections"),
+                .product(name: "DequeModule", package: "swift-collections"),
+                .product(name: "HashTreeCollections", package: "swift-collections"),
+                .product(name: "HeapModule", package: "swift-collections"),
+                .product(name: "OrderedCollections", package: "swift-collections"),
+                .product(name: "_RopeModule", package: "swift-collections"),
+                .product(name: "Collections", package: "swift-collections"),
+            ]),
 ]
