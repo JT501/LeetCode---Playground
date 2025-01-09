@@ -1,5 +1,5 @@
 /*:
- ##
+ ## String
  ### Time: O(N²*M) where n = words.count, m = average length of all words
  ### Space: O(N)
  ![submission](1.png)

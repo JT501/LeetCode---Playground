@@ -1,5 +1,5 @@
 /*:
- ##
+ ## String
  ### Time: O(N²)
  ### Space: O(N)
  ![submission](1.png)
