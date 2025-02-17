@@ -4,6 +4,7 @@
  ### Space: O(log10​(n))
  ![submission](1.png)
  */
+
 class Solution {
     func punishmentNumber(_ n: Int) -> Int {
         var sum = 0
